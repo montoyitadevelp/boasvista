@@ -15,8 +15,6 @@ export default defineConfig({
     prefixDefaultLocale: false
   },
   output: 'server',
-  adapter: vercel({
-    imageService: true
-  }),
+  adapter: vercel(),
 
 });
