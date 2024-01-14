@@ -1,0 +1,54 @@
+---
+import Car from './icons/Car.astro';
+import Shop from './icons/Shop.astro';
+import Bunfire from './icons/Bunfire.astro';
+import { getI18N } from '../i18n';
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section>
+  <div class="flex flex-col items-center md:items-baseline p-10">
+    <p class="text-sm font-semibold text-gray-800/80">
+      {i18n.QUESTION_SECTIONS}
+    </p>
+    <h1 class="text-3xl font-bold text-balance">
+      Lets us worry about your plans, <br />just get packed
+    </h1>
+  </div>
+  <div class="flex  flex-col md:flex-row justify-center items-center gap-10 p-10 animate-fade-right">
+    <img
+      class="rounded-xl bg-no-repeat bg-cover bg-center h-full w-96 shadow-2xl shadow-slate-800"
+      src="/public/img/SelectDestination.webp"
+      alt="Selected destination from Boa Vista"
+    />
+    <div class="flex flex-col">
+      <Car />
+      <h1 class="text-2xl font-bold text-balance">Rent a car</h1>
+      <p class="text-lg font-medium text-balance">
+        Participate in Our 4x4 Pickup Off-Road Exploration!
+      </p>
+
+      <strong class="font-bold text-lg" style="color: rgb(97, 92, 67)"
+        >Price <p class="font-medium">€50</p></strong
+      >
+      <hr class="border-black mb-5" />
+
+      <Bunfire />
+      <h1 class="text-2xl font-bold text-balance">African event</h1>
+      <p class="text-lg font-medium text-balance">
+        The ultimate weekly musical event of boa Vista
+      </p>
+      <div class="flex flex-row justify-between">
+        <strong class="font-bold text-lg" style="color: rgb(97, 92, 67)"
+          >Free Event!</strong
+        >
+        <button
+          class="flex flex-row justify-end items-center text-sm font-medium text-white rounded-full w-26 p-2 bg-[#252915] overflow-hidden transform hover:scale-95 transition-transform text__glowing"
+        >
+          Let's go <span class="ml-2"><Shop /></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import Starts from './icons/Starts.astro';
+---
+
+<section id="clients">
+  <div class="flex flex-col justify-center items-center text-pretty pt-20">
+    <p class="text-lg font-semibold">Testimonals</p>
+    <h1 class=" text-xl md:text-3xl font-bold">Dont take our word for it</h1>
+  </div>
+  <div
+    class="flex flex-col justify-center items-center w-full h-full pb-32 pt-10"
+  >
+    <p class=" text-sm md:text-lg font-medium text-center w-96">
+      "The quad tour offered by this service was an absolute blast! Riding
+      through the diverse landscapes of Boa Vista on a quad was an exhilarating
+      experience. The guides were knowledgeable and ensured our safety while
+      making the adventure truly memorable.""
+    </p>
+    <Starts />
+    <div class="flex flex-col md:flex-row gap-12 justify-evenly pt-7 animate-fade-down">
+      <div class="flex flex-col items-center gap-5">
+        <img
+          class="w-24"
+          src="/public/img/Profile1.webp"
+          alt="Nora Acholo face"
+        />
+        <h1 class="text-lg font-bold">Nora Acholo</h1>
+      </div>
+      <span class="hidden md:flex gap-12">
+        <div class="flex flex-col items-center gap-5">
+          <img class="w-24" src="/public/img/Profile2.webp" alt="Klaus face" />
+          <h1 class="text-lg font-bold">Klaus</h1>
+        </div>
+        <div class="flex flex-col items-center gap-5">
+          <img
+            class="w-24"
+            src="/public/img/Profile3.webp"
+            alt="Osinachi face"
+          />
+          <h1 class="text-lg font-bold">Osinachi</h1>
+        </div>
+        <div class="flex flex-col items-center gap-5">
+          <img class="w-24" src="/public/img/Profile4.webp" alt="Victor face" />
+          <h1 class="text-lg font-bold">Victor</h1>
+        </div>
+        <div class="flex flex-col items-center gap-5">
+          <img class="w-24" src="/public/img/Profile5.webp" alt="Bryan face" />
+          <h1 class="text-lg font-bold">Bryan</h1>
+        </div>
+      </div>
+      </span>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import BentoItem from './BentoItem.astro';
+
+import { getI18N } from '../i18n/index.ts';
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<div class="flex flex-col justify-center items-center text-pretty pt-32">
+  <p class="text-lg font-semibold">{i18n.SUBTITLE_GALLERY}</p>
+  <h1 class="text-3xl font-bold">{i18n.TITLE_GALLERY}</h1>
+</div>
+<section id="services">
+  <div
+    class={`w-full max-w-[1500px] grid lg:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto p-6 md:p-12 lg:p-20`}
+  >
+    <BentoItem
+      class="col-span-10 md:col-span-6"
+      title={i18n.TITLE_BENTO_SNORKELING}
+      subtitle={i18n.DESCRIPTION_BENTO_SNORKELING}
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        id="main-video"
+        slot="video"
+        class="background transition-scale rounded-xl absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-blue-950
+         opacity-90 bg-blend-luminosity object-cover object-center duration-1000 ease-in-out group-hover:scale-110"
+      >
+        <source src="/public/videos/Turtle.mp4" />
+      </video>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 md:col-span-4"
+      title={i18n.TITLE_BENTO_PARTY}
+      subtitle={i18n.DESCRIPTION_BENTO_PARTY}
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        id="main-video"
+        slot="video"
+        class="background transition-scale rounded-xl absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-950
+     opacity-90 bg-blend-luminosity object-cover object-center duration-1000 ease-in-out group-hover:scale-110"
+      >
+        <source src="/public/videos/Meet.webm" />
+      </video>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 md:col-span-4"
+      title={i18n.TITLE_BENTO_BUGGY}
+      subtitle={i18n.DESCRIPTION_BENTO_BUGGY}
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        id="main-video"
+        slot="video"
+        class="background transition-scale rounded-xl absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-950
+     opacity-90 bg-blend-luminosity object-cover object-center duration-1000 ease-in-out group-hover:scale-110"
+      >
+        <source src="/public/videos/QuadTours.webm" />
+      </video>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 md:col-span-6"
+      title={i18n.TITLE_BENTO_LOBSTER}
+      subtitle={i18n.DESCRIPTION_BENTO_LOBSTER}
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        id="main-video"
+        slot="video"
+        class="background transition-scale rounded-xl absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-950
+     opacity-90 bg-blend-luminosity object-cover object-center duration-1000 ease-in-out group-hover:scale-110"
+      >
+        <source src="/public/videos/Lobster.webm" />
+      </video>
+    </BentoItem>
+  </div>
+</section>

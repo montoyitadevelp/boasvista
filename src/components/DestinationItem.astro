@@ -1,0 +1,62 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  subTitle?: string;
+  timeTitle: string;
+  timeSubTitle: string;
+  meetTitle: string;
+  meetSubTitle: string;
+}
+
+const {
+  image,
+  title,
+  subTitle,
+  timeTitle,
+  timeSubTitle,
+  meetTitle,
+  meetSubTitle,
+} = Astro.props;
+---
+
+<div
+  class="relative max-w-sm shadow-2xl rounded-xl overflow-hidden transform hover:scale-95 transition-transform cursor-pointer"
+>
+  <img
+    class="rounded-xl bg-no-repeat bg-center h-96"
+    src={image}
+    alt="Collection of destinations Boa Vista"
+  />
+
+  <div class="absolute bottom-0 m-auto right-0 left-0">
+    <div class="flex flex-col">
+      <div class="flex flex-row justify-center items-center gap-2">
+        <h1
+          class="text-2xl font-bold text-center text-white text-balance bg-gradient-to-b"
+        >
+          <strong class="text-[#353838]">{title}</strong>
+          {subTitle}
+        </h1>
+        {(<slot name="icon" />)}
+      </div>
+
+      <div class="flex flex-row justify-center items-center gap-2 mb-2">
+        <slot name="iconTime" />
+
+        <p class="text-sm text-balance font-bold text-white">
+          {timeTitle}: <p class="font-extrabold text-[#2c2e24] text-xs">
+            {timeSubTitle}
+          </p>
+        </p>
+
+        <slot name="iconMeet" />
+        <p class="text-sm text-balance font-bold text-white">
+          {meetTitle}: <p class="font-extrabold text-[#2c2e24] text-xs">
+            {meetSubTitle}
+          </p>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

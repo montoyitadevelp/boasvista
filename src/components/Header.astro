@@ -1,0 +1,54 @@
+---
+import CloseIcon from './icons/Close.astro';
+import MenuIcon from './icons/MenuIcon.astro';
+---
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-16">
+    <a class="text__glowing flex flex-row items-center w-56 gap-4" href="#home">
+      <img
+        src="/public/img/BoaVistaLogo.webp"
+        width="50"
+        alt="Logo Boa Vista"
+      />
+      <h1 class="text-xl text-white font-bold text-pretty text__glowing">
+        Boa Vista
+      </h1>
+    </a>
+
+    <nav
+      id="header-menu"
+      class="fixed w-full h-dvh inset-0 bg-[#151a36]/90 text-xl flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:text-lg md:flex-row md:translate-y-[initial]"
+    >
+      <ul class="flex flex-col md:flex-row justify-center items-center text-white gap-10">
+        <a class="hover:text-primary duration-300 text__glowing" href="#places">
+          <li>Places</li>
+        </a>
+        <a class="hover:text-primary duration-300 text__glowing" href="#clients">
+          <li>Clients</li>
+        </a>
+        <a class="hover:text-primary duration-300 text__glowing" href="#services">
+          <li>Services</li>
+        </a>
+        <a
+          class="hover:text-primary duration-300 text__glowing"
+          href="#contact"
+        >
+          <li>Contact</li>
+        </a>
+        <div  class="flex w-72 justify-center md:justify-end">
+          <a
+          href="#trip"
+            class="border text__glowing rounded-full inline-block border-white px-4 py-2 justify-self-end text-white hover:bg-white hover:text-gray-500 duration-300"
+          >
+            Take a trip
+          </a>
+        </div>
+      </ul>
+      <a href="#header-nav" class="md:hidden absolute top-6 right-6">
+        <CloseIcon />
+      </a>
+    </nav>
+    <a href="#header-menu" class="md:hidden"><MenuIcon /></a>
+  </div>
+</header>

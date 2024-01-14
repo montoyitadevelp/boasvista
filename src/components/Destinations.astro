@@ -1,0 +1,75 @@
+---
+import LeftArrow from './icons/LeftArrow.astro';
+import RigthArrow from './icons/RigthArrow.astro';
+import DestinationItem from './DestinationItem.astro';
+import Whale from './icons/Whale.astro';
+import Time from './icons/Time.astro';
+import Meet from './icons/Meet.astro';
+import Quad from './icons/Quad.astro';
+import Snorkeling from './icons/Snorkeling.astro';
+
+import { getI18N } from '../i18n/index.ts'
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+
+<article id="places" class="w-full max-w-full">
+  <section class="flex flex-col md:flex-row justify-center items-center p-10">
+    <div class="flex items-center md:items-baseline flex-col w-full">
+      <h3 class="text-sm font-semibold text-gray-800/80">
+        {i18n.QUESTION_SECTIONS}
+      </h3>
+      <h1 class="text-3xl font-bold text-balance">{i18n.TITLE_DESTINATION}</h1>
+    </div>
+    <div class="flex flex-row w-full justify-center md:justify-end gap-4">
+      <button>
+        <LeftArrow />
+      </button>
+      <button>
+        <RigthArrow />
+      </button>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center  lg:flex-row gap-5 px-10 animate-jump-in">
+    <DestinationItem
+      image="/public/img/VisitWhales.webp"
+      title="Whale"
+      subTitle="watching tour"
+      timeTitle="Duration"
+      timeSubTitle="4 hours"
+      meetTitle="Meet time"
+      meetSubTitle="10:00 am"
+    >
+      <Whale slot="icon" />
+      <Time slot="iconTime" />
+      <Meet slot="iconMeet" />
+    </DestinationItem>
+    <DestinationItem
+      image="/public/img/QuadRental.webp"
+      title="Quad"
+      subTitle="rental tour"
+      timeTitle="Duration"
+      timeSubTitle="8 hours"
+      meetTitle="Available"
+      meetSubTitle="9:00am"
+    >
+      <Quad slot="icon" />
+      <Time slot="iconTime" />
+      <Meet slot="iconMeet" />
+    </DestinationItem>
+    <DestinationItem
+      image="/public/img/TourSnorkeling.webp"
+      title="Snorkeling"
+      subTitle="tour"
+      timeTitle="Duration"
+      timeSubTitle="4 hours"
+      meetTitle="Meet time"
+      meetSubTitle="10:00 am"
+    >
+      <Snorkeling slot="icon" />
+      <Time slot="iconTime" />
+      <Meet slot="iconMeet" />
+    </DestinationItem>
+  </section>
+</article>

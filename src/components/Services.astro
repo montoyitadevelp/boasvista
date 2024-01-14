@@ -1,0 +1,41 @@
+---
+import { getI18N } from '../i18n/index.ts';
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section
+  class="flex flex-col h-full justify-evenly items-center text-pretty bg-[#D9ED82] md:h-56 p-5"
+>
+  <div class="flex flex-col md:flex-row w-80 md:w-full gap-16">
+    <div class="flex flex-col gap-2">
+      <img
+        class="w-16"
+        src="/public/img/MotorBike.webp"
+        alt="Motor Bike Boa Vista"
+      />
+      <h1 class="font-semibold text-lg">{i18n.TITLE_QUAD}</h1>
+      <p>
+        {i18n.DESCRIPTION_QUAD}
+      </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <img
+        class="w-16"
+        src="/public/img/Snorkeling.webp"
+        alt="Snorkeling Boa Vista"
+      />
+      <h1 class="font-semibold text-lg">{i18n.TITLE_SNORKELING}</h1>
+      <p>
+        {i18n.DESCRIPTION_SNORKELING}
+      </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <img class="w-16" src="/public/img/Whale.webp" alt="Whale Boa Vista" />
+      <h1 class="font-semibold text-lg">{i18n.TITLE_WHALE}</h1>
+      <p>
+        {i18n.DESCRIPTION_WHALE}
+      </p>
+    </div>
+  </div>
+</section>
